@@ -544,7 +544,7 @@ border: solid 0.1px var(--bleuPrincipal);
    .skillElements.services .skillItems.contact .skill_services .text.contact .elem{
     width: 100%;
     } 
-   .skillElements.services .skillItems.contact .skill_services .text.contact a .elem{
+   .skillElements.services .skillItems.contact .skill_services .text.contact a{
     width: 100%;
     } 
 }
