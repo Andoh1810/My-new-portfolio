@@ -515,6 +515,54 @@ border: solid 0.1px var(--bleuPrincipal);
 .skillElements.services .skillItems .skill_services .text{
     font-size: 19px;
 }
+.skillElements.services .skillItems.contact p{
+    font-size: 22px;
+    text-align: center;
+}
+.skillElements.services .skillItems.contact .skill_services .text.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+}
+.skillElements.services .skillItems.contact .skill_services .text.contact .elem{
+    border: solid 0.1px var(--bleuPrincipal);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    width: 229.2px;
+    transition: 0.2s;
+}
+.skillElements.services .skillItems.contact .skill_services .text.contact .elem:hover{
+    background-color: var(--couleurBleu);
+    transform: translateY(-10px);
+}
+@media (max-width: 577px){
+   .skillElements.services .skillItems.contact .skill_services .text.contact .elem{
+    width: 100%;
+    } 
+   .skillElements.services .skillItems.contact .skill_services .text.contact a .elem{
+    width: 100%;
+    } 
+}
+.skillElements.services .skillItems.contact .skill_services .text.contact .elem .title_icon{
+    color: var(--bleuPrincipal);
+}
+.skillElements.services .skillItems.contact .skill_services .text.contact .elem svg{
+    width: 70px;
+    height: 70px;
+}
+.skillElements.services .skillItems.contact .skill_services .text.contact a{
+    text-decoration: none;
+    color: var(--blanc);
+}
+.skillElements.services .skillItems.contact .skill_services .text.contact .elem .subtitle_icon{
+    font-size: 16px;
+    margin-top: 12px;
+}
 @media (max-width: 417px){
     .skillElements.proj .skillItems{
         width: 100%;
