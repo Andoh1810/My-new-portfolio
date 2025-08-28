@@ -18,7 +18,32 @@ for (let i=0; i<nbPoints; i++){
 }
 
 
-//Changement de pages
+//Navbar
+
+const navLinks = document.querySelectorAll('.nav-link');
+const navbarCollapse = document.querySelector('.navbar-collapse');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+        });
+        bsCollapse.hide();
+    });
+});
+
+
+document.addEventListener('click', function (event) {
+    const isClickInside = document.querySelector('.navbar').contains(event.target);
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (!isClickInside && navbarCollapse.classList.contains('show')) {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+        });
+        bsCollapse.hide();
+    }
+});
 
 //Changement de langues
 
@@ -34,7 +59,7 @@ fran.addEventListener("click", ()=>{
             element.style.display = "none";
         });
         vf.forEach(element => {
-            element.style.display = "flex";
+            element.style.display = "block";
         });
     }
 });
@@ -43,7 +68,7 @@ ang.addEventListener("click", ()=>{
         ang.classList.add("langueActive");
         fran.classList.remove("langueActive");
         ven.forEach(element => {
-            element.style.display = "flex";
+            element.style.display = "block";
         });
         vf.forEach(element => {
             element.style.display = "none";
@@ -52,6 +77,143 @@ ang.addEventListener("click", ()=>{
 
 });
 
+//anime scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll('.anime-on-scroll');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active'); // retire la classe quand on sort du viewport
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  elements.forEach(el => observer.observe(el));
+});
+
+//Filtre des creations
+
+
+function projet_all(){
+    let active = document.querySelector(".proj_btn1");
+    let active1 = document.querySelector(".proj_btn2");
+    let active2 = document.querySelector(".proj_btn3");
+    let active3 = document.querySelector(".proj_btn4");
+
+    let proj_all = document.querySelectorAll(".skillItems.tout");
+
+    active.classList.add("boutton1");
+    active.classList.remove("boutton2");
+    active1.classList.remove("boutton1");
+    active1.classList.add("boutton2");
+    active2.classList.remove("boutton1");
+    active2.classList.add("boutton2");
+    active3.classList.remove("boutton1");
+    active3.classList.add("boutton2");
+
+    proj_all.forEach(element => {
+        element.style.display = "flex";
+    });
+}
+
+function projet_web(){
+
+    let active = document.querySelector(".proj_btn1");
+    let active1 = document.querySelector(".proj_btn2");
+    let active2 = document.querySelector(".proj_btn3");
+    let active3 = document.querySelector(".proj_btn4");
+
+    active.classList.add("boutton2");
+    active.classList.remove("boutton1");
+    active1.classList.remove("boutton2");
+    active1.classList.add("boutton1");
+    active2.classList.remove("boutton1");
+    active2.classList.add("boutton2");
+    active3.classList.remove("boutton1");
+    active3.classList.add("boutton2");
+
+    let proj_web = document.querySelectorAll(".skillItems.devweb");
+    let proj_fly = document.querySelectorAll(".skillItems.fly");
+    let proj_log = document.querySelectorAll(".skillItems.log");
+
+    proj_fly.forEach(element => {
+        element.style.display = "none";
+    });
+    proj_log.forEach(element1 => {
+        element1.style.display = "none";
+    });
+    proj_web.forEach(element2 => {
+        element2.style.display = "flex";
+    });
+}
+
+function projet_logo(){
+
+    let active = document.querySelector(".proj_btn1");
+    let active1 = document.querySelector(".proj_btn2");
+    let active2 = document.querySelector(".proj_btn3");
+    let active3 = document.querySelector(".proj_btn4");    
+
+    active.classList.add("boutton2");
+    active.classList.remove("boutton1");
+    active1.classList.remove("boutton1");
+    active1.classList.add("boutton2");
+    active2.classList.remove("boutton2");
+    active2.classList.add("boutton1");
+    active3.classList.remove("boutton1");
+    active3.classList.add("boutton2");
+
+    let proj_web = document.querySelectorAll(".skillItems.devweb");
+    let proj_fly = document.querySelectorAll(".skillItems.fly");
+    let proj_log = document.querySelectorAll(".skillItems.log");
+
+    proj_fly.forEach(element => {
+        element.style.display = "none";
+    });
+    proj_log.forEach(element1 => {
+        element1.style.display = "flex";
+    });
+    proj_web.forEach(element2 => {
+        element2.style.display = "none";
+    });
+    
+}
+
+function projet_flyers(){
+
+    let active = document.querySelector(".proj_btn1");
+    let active1 = document.querySelector(".proj_btn2");
+    let active2 = document.querySelector(".proj_btn3");
+    let active3 = document.querySelector(".proj_btn4");
+
+    active.classList.add("boutton2");
+    active.classList.remove("boutton1");
+    active1.classList.remove("boutton1");
+    active1.classList.add("boutton2");
+    active2.classList.remove("boutton1");
+    active2.classList.add("boutton2");
+    active3.classList.remove("boutton2");
+    active3.classList.add("boutton1");
+
+    let proj_web = document.querySelectorAll(".skillItems.devweb");
+    let proj_fly = document.querySelectorAll(".skillItems.fly");
+    let proj_log = document.querySelectorAll(".skillItems.log");
+
+    proj_fly.forEach(element => {
+        element.style.display = "flex";
+    });
+    proj_log.forEach(element1 => {
+        element1.style.display = "none";
+    });
+    proj_web.forEach(element2 => {
+        element2.style.display = "none";
+    });
+}
 
 //class active navigations
 
@@ -74,7 +236,7 @@ function home(){
     gallery.classList.remove("activee");
     contacts.classList.remove("activee");
 
-    Home.style.display = "flex";
+    Home.style.display = "block";
     About.style.display = "none";
     Project.style.display = "none";
     Galery.style.display = "none";
@@ -89,7 +251,7 @@ function about(){
     contacts.classList.remove("activee");
 
     Home.style.display = "none";
-    About.style.display = "flex";
+    About.style.display = "block";
     Project.style.display = "none";
     Galery.style.display = "none";
     Contact.style.display = "none";
@@ -104,7 +266,7 @@ function projects(){
 
     Home.style.display = "none";
     About.style.display = "none";
-    Project.style.display = "flex";
+    Project.style.display = "block";
     Galery.style.display = "none";
     Contact.style.display = "none";
 }
@@ -119,7 +281,7 @@ function galery(){
     Home.style.display = "none";
     About.style.display = "none";
     Project.style.display = "none";
-    Galery.style.display = "flex";
+    Galery.style.display = "block";
     Contact.style.display = "none";
 }
 
@@ -134,5 +296,5 @@ function contact(){
     About.style.display = "none";
     Project.style.display = "none";
     Galery.style.display = "none";
-    Contact.style.display = "flex";
+    Contact.style.display = "block";
 }
