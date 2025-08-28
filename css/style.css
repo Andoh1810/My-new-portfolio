@@ -453,11 +453,31 @@ footer{
     display: block;
     margin-top: -50px;
 }
+.skillElements.services form input::placeholder, .skillElements.services form textarea::placeholder{
+    color: var(--blancPoints);
+    left: 10px;
+}
+.skillElements.services form input{
+display: block; width: 100%; background-color: var(--couleurBleu); border-radius: 8px; height: 50px;
+color: var(--blanc);
+border: none;
+border: solid 0.1px var(--bleuPrincipal);
+}
+.skillElements.services form button{
+    width: 100%; border-radius: 8px; height: 50px; font-weight: bold; font-size: 25px;
+}
+.skillElements.services form textarea{
+    display: block; width: 100%; height: 230px; background-color: var(--couleurBleu);border-radius: 8px;
+    color: var(--blanc);
+    border: none;
+    border: solid 0.1px var(--bleuPrincipal);
+}
 .skillElements.services .skillItems{
     width: 100%;
     height: max-content;
     margin-bottom: 20px;
 }
+
 .skillElements.services .skillItems h2{
     text-align: center;
     font-weight: bold;
@@ -478,6 +498,13 @@ footer{
 .skillElements.services .skillItems .skill_services .img img{
     width: 442px;
     height: 305px;
+    transition: 0.5s;
+    animation: services_img 3s ease-in-out infinite alternate;
+}
+@keyframes services_img{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-20px);}
+    100%{transform: translateY(0);}
 }
 @media (max-width: 600px){
     .skillElements.services .skillItems .skill_services .img img{
