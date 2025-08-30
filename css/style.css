@@ -278,7 +278,7 @@ footer{
     width: 450px;
     height: 45vh;
     border-radius: 15px;
-    box-shadow: 0px 0px 9px var(--bleuPrincipal);
+    border: solid var(--bleuPrincipal);
     animation: 2s linear myimage2 .1s;
 }
 
